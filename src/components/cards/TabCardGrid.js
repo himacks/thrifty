@@ -203,7 +203,7 @@ export default ({
                     <CardHeartsContainer>
                       <CardHearts>
                         <HeartIcon />
-                      </  >
+                      </CardHearts>
                       <CardReview>({card.reviews})</CardReview>
                     </CardHeartsContainer>
                   </CardImageContainer>
