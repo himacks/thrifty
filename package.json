@@ -5,6 +5,7 @@
   "engines": {
     "node": "16.14.2"
   },
+  "stack": "heroku-20",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.0",
     "@testing-library/react": "^13.4.0",
