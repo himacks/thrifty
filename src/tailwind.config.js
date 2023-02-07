@@ -266,6 +266,7 @@ module.exports = {
       DEFAULT: '1',
     },
     fontFamily: {
+      retroCool: ['retro-cool'],
       display: ['Inter', 'system-ui'],
       sans: [
         'system-ui',

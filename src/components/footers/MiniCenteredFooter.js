@@ -40,7 +40,6 @@ export default () => {
           </LogoContainer>
           <LinksContainer>
             <Link href="/">Home</Link>
-            <Link href="/about-us">About</Link>
             <Link href="/educational">Education</Link>
             <Link href="/contact-us">Contact Us</Link>
           </LinksContainer>

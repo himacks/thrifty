@@ -15,9 +15,11 @@ import { ReactComponent as CloseIcon } from "feather-icons/dist/icons/x.svg";
 import { ReactComponent as SvgDecoratorBlob1 } from "../../images/svg-decorator-blob-1.svg";
 import { ReactComponent as SvgDecoratorBlob2 } from "../../images/dot-pattern.svg";
 import DesignIllustration from "../../images/design-illustration.svg";
+import MainBanner from "../../images/mainbanner.jpeg";
+
 
 const MainContainer = styled.div`
-  background-image: url("https://images.unsplash.com/photo-1536882240095-0379873feb4e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1771&q=80"); 
+  background-image: url(${MainBanner}); 
   ${tw`relative pb-32 bg-cover`}
   `;
 
@@ -27,13 +29,13 @@ const TwoColumn = tw.div`flex flex-col lg:flex-row md:items-center max-w-screen-
 const LeftColumn = tw.div`relative lg:w-6/12 lg:pr-12 flex-shrink-0 text-center lg:text-left`;
 const RightColumn = tw.div`relative mt-12 lg:mt-0 flex flex-col justify-center`;
 
-const Heading = tw.h1`font-black text-gray-800 text-3xl md:text-5xl leading-snug max-w-3xl`;
-const Paragraph = tw.p`my-5 lg:my-8 text-sm lg:text-base font-medium text-gray-600 max-w-lg mx-auto lg:mx-0`;
+const Heading = tw.h1`font-black font-retroCool text-gray-800 text-3xl md:text-5xl leading-tight tracking-wide max-w-3xl`;
+const Paragraph = tw.p`font-medium font-serif my-5 lg:my-8 text-lg text-gray-800 max-w-lg mx-auto lg:mx-0`;
 
 const Actions = tw.div`flex flex-col items-center sm:flex-row justify-center lg:justify-start mt-8`;
 const ActionButton = tw(
   AnchorLink
-)`font-bold px-8 lg:px-10 py-3 rounded bg-primary-400 text-gray-100 hocus:bg-primary-700 focus:shadow-outline focus:outline-none transition duration-300`;
+)`font-bold px-4 lg:px-6 py-3 rounded bg-primary-700 text-gray-100 hocus:bg-primary-700 focus:shadow-outline focus:outline-none transition duration-300`;
 const PrimaryButton = tw(ActionButton)``;
 
 const WatchVideoButton = styled.button`
@@ -77,6 +79,7 @@ export default ({
   watchVideoEnabled = false,
   watchVideoButtonText="Watch Video",
   watchVideoYoutubeUrl="https://www.youtube.com/embed/_GuOjXYl5ew",
+  enableImage = true,
   imageSrc=DesignIllustration,
   imageCss=null,
   imageDecoratorBlob = false,
@@ -87,7 +90,7 @@ export default ({
 
   return (
     <MainContainer>
-      <Header />
+      <Header useLogo={false} />
       <Container>
         <TwoColumn>
           <LeftColumn>
@@ -104,6 +107,7 @@ export default ({
             </Actions>
           </LeftColumn>
           <RightColumn>
+            {enableImage ? 
             <IllustrationContainer>
               <img
                 css={imageCss}
@@ -112,6 +116,7 @@ export default ({
               />
               {imageDecoratorBlob && <DecoratorBlob2 />}
             </IllustrationContainer>
+            : undefined }
           </RightColumn>
         </TwoColumn>
         <DecoratorBlob1 />

@@ -1,5 +1,6 @@
 import React from "react";
 import GlobalStyles from 'styles/GlobalStyles';
+import 'styles/globals.css';
 import { css } from "styled-components/macro"; //eslint-disable-line
 
 /*
@@ -118,8 +119,7 @@ export default function App() {
         <Routes>
           <Route path="/components/:type/:subtype/:name" element={<ComponentRenderer />} />
           <Route path="/contact-us" element={<ContactUsPage />} />
-          <Route path="/educational" element={<BlogIndexPage />} />
-          <Route path="/about-us" element={<AboutUsPage />} />
+          <Route path="/educational" element={<AboutUsPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/" element={<ThriftyLandingPage />} />
         </Routes>
